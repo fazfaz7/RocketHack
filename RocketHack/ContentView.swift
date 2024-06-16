@@ -9,13 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        ZStack{
+            VStack {
+                
+                TabView {
+                    PedidosView()
+                        .tabItem {
+                            Label("Inicio",systemImage: "house.fill")
+                        }
+                    
+                    PedidosView()
+                        .tabItem {
+                            Label("Productos",systemImage: "waterbottle.fill")
+                            
+                        }
+                    
+                    PedidosView()
+                        .tabItem {
+                            Label("Pedidos",systemImage: "list.bullet")
+                        }
+                    
+                    PedidosView()
+                        .tabItem {
+                            Label("Soporte",systemImage:"ellipsis.message.fill")
+                        }
+                }
+            }
+        }.ignoresSafeArea(.all)
     }
 }
 
